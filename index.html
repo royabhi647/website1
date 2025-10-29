@@ -7,10 +7,10 @@
   <title>E-tutor - Online Learning Platform</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/css/eduhive.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
 
 
   <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
@@ -74,7 +74,7 @@
           <nav class="main-header__nav main-menu">
             <ul class="main-menu__list">
               <li class="dropdown">
-                <a href="#">Categories</a>
+                <a href="#" style="text-decoration: none;">Categories</a>
                 <ul>
                   <li><a href="#">All Categories</a></li>
                   <li><a href="#">Mind</a></li>
@@ -86,14 +86,14 @@
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="#">Community</a>
+                <a href="#" style="text-decoration: none;">Community</a>
                 <ul>
                   <li><a href="#">Community First</a></li>
                   <li><a href="#">Global Events</a></li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="#">Results</a>
+                <a href="#" style="text-decoration: none;">Results</a>
                 <ul>
                   <li><a href="#">20000+ Case Studies</a></li>
                   <li><a href="#">Our Transformational Model</a></li>
@@ -101,7 +101,7 @@
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="#">At Work</a>
+                <a href="#" style="text-decoration: none;">At Work</a>
                 <ul>
                   <li><a href="#">Business</a></li>
                   <li><a href="#">Find A Coach</a></li>
@@ -118,9 +118,10 @@
             <span></span>
           </div>
           <!--<a href="#" class="btn btn-outline-primary">Login</a>-->
-          <a href="#" class="main-header__btn eduhive-btn" style="height:40px; width:160px;">
+          <a href="#" class="main-header__btn eduhive-btn"
+            style="height:40px; width:160px; text-decoration: none; position: relative;">
             <span>Start Now</span>
-            <span class="eduhive-btn__icon">
+            <span class="eduhive-btn__icon" style="position: absolute; right: 2px;">
               <span class="eduhive-btn__icon__inner"><i class="icon-right-arrow"></i></span>
             </span>
           </a><!-- /.main-header__btn eduhive-btn -->
@@ -148,7 +149,7 @@
               <div class="button-group">
                 <a class="rbt-btn btn-gradient hover-icon-reverse" href="#">
                   <span class="icon-reverse-wrapper">
-                    <span class="btn-text">Get Started</span>
+                    <span class="btn-text" style="font-family: sans-serif;">Get Started</span>
                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                   </span>
@@ -156,7 +157,7 @@
                 <a class="rbt-btn btn-border hover-icon-reverse popup-video"
                   href="https://www.youtube.com/watch?v=nA1Aqp0sPQo">
                   <span class="icon-reverse-wrapper">
-                    <span class="btn-text">Watch Video</span>
+                    <span class="btn-text" style="font-family: sans-serif;">Watch Video</span>
                     <span class="btn-icon"><i class="feather-play"></i></span>
                     <span class="btn-icon"><i class="feather-play"></i></span>
                   </span>
@@ -228,6 +229,27 @@
         <span class="youtube-font-script">hello</span>
       </div>
 
+      <div class="animated-image image1">
+        <!-- Replace with your actual image -->
+        <img src="/assets/img1-removebg-preview.png" alt="Image 1"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="image-placeholder" style="display: none;">🎨</div>
+      </div>
+
+      <div class="animated-image image3">
+        <!-- Replace with your actual image -->
+        <img src="/assets/img3-removebg-preview.png" alt="Image 3"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="image-placeholder" style="display: none;">✨</div>
+      </div>
+
+      <div class="animated-image image2">
+        <!-- Replace with your actual image -->
+        <img src="/assets/img2-removebg-preview.png" alt="Image 2"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="image-placeholder" style="display: none;">🚀</div>
+      </div>
+
       <!-- Main heading -->
       <h1 class="youtube-main-heading">
         <span class="youtube-text-hero">We're making an course</span>
@@ -271,7 +293,7 @@
 
     <div class="content">
       <div class="announcement-image">
-        <iframe width="1080" height="720" src="https://www.youtube.com/embed/WQ-6s8j3bJA?si=Gcdf3HSMlg_TlsVb"
+        <iframe src="https://www.youtube.com/embed/WQ-6s8j3bJA?si=Gcdf3HSMlg_TlsVb&autoplay=1&mute=1"
           title="YouTube video player" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -564,7 +586,8 @@
                   25 weeks
                 </div>
               </div>
-              <h3 class="course-card__title"><a href="wordpress-development.html">WordPress for Everyone: Unlock Your
+              <h3 class="course-card__title"><a href="wordpress-development.html"
+                  style="text-decoration: none;">WordPress for Everyone: Unlock Your
                   Creativity Online</a></h3>
               <div class="course-card__info">
                 <div class="course-card__lessons">
@@ -593,7 +616,8 @@
                     25 weeks
                   </div>
                 </div>
-                <h3 class="course-card__title course-card__title--hover"><a href="wordpress-development.html">WordPress
+                <h3 class="course-card__title course-card__title--hover"><a href="wordpress-development.html"
+                    style="text-decoration: none;">WordPress
                     for Everyone: Unlock Your Creativity Online</a></h3>
                 <p class="course-card__text">Viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam phasellus
                   vestibulum lorem sed risus</p>
@@ -617,7 +641,8 @@
                   </div>
                   <p class="course-card__ratings__text">5 Ratings</p>
                 </div>
-                <a href="wordpress-development.html" class="course-card__btn eduhive-btn eduhive-btn--border">
+                <a href="wordpress-development.html" class="course-card__btn eduhive-btn eduhive-btn--border"
+                  style="text-decoration: none;">
                   <span>enroll now</span>
                   <span class="eduhive-btn__icon">
                     <span class="eduhive-btn__icon__inner"><i class="icon-right-arrow"></i></span>
@@ -995,7 +1020,7 @@
           </div><!-- /.col-xl-9 col-lg-8 -->
           <div class="col-xl-3 col-lg-4">
             <div class="blog-two__button">
-              <a href="blog-grid-right.html" class="eduhive-btn">
+              <a href="blog-grid-right.html" class="eduhive-btn" style="text-decoration: none;">
                 <span>view all blog</span>
                 <span class="eduhive-btn__icon">
                   <span class="eduhive-btn__icon__inner"><i class="icon-right-arrow"></i></span>
@@ -1016,7 +1041,7 @@
             <div class="blog-card__content">
               <ul class="list-unstyled blog-card__meta">
                 <li>
-                  <a href="index-2.html#">
+                  <a href="index-2.html#" style="text-decoration: none;">
                     <span class="blog-card__meta__icon">
                       <i class="icon-comments"></i>
                     </span>
@@ -1024,7 +1049,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="index-2.html#">
+                  <a href="index-2.html#" style="text-decoration: none;">
                     <span class="blog-card__meta__icon">
                       <i class="icon-date"></i>
                     </span>
@@ -1043,11 +1068,11 @@
                   <div class="blog-card__author__identity">
                     <p class="blog-card__author__text">By Admin</p><!-- /.author-text -->
                     <h5 class="blog-card__author__name">
-                      <a href="index-2.html#">Ronald Richards</a>
+                      <a href="index-2.html#" style="text-decoration: none;">Ronald Richards</a>
                     </h5><!-- /.author-name -->
                   </div><!-- /.blog-card__author__identity -->
                 </div><!-- /.blog-card__author -->
-                <a href="blog-details-right.html" class="eduhive-btn">
+                <a href="blog-details-right.html" class="eduhive-btn" style="text-decoration: none;">
                   <span class="eduhive-btn__text">read More</span>
                   <span class="eduhive-btn__icon">
                     <span class="eduhive-btn__icon__inner"><i class="icon-arrow-right"></i></span>
@@ -1069,7 +1094,7 @@
                 <div class="blog-card__content">
                   <ul class="list-unstyled blog-card__meta">
                     <li>
-                      <a href="index-2.html#">
+                      <a href="index-2.html#" style="text-decoration: none;">
                         <span class="blog-card__meta__icon">
                           <i class="icon-comments"></i>
                         </span>
@@ -1077,7 +1102,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="index-2.html#">
+                      <a href="index-2.html#" style="text-decoration: none;">
                         <span class="blog-card__meta__icon">
                           <i class="icon-date"></i>
                         </span>
@@ -1093,7 +1118,7 @@
                     <div class="blog-card__author__identity">
                       <p class="blog-card__author__text">By Admin</p><!-- /.author-text -->
                       <h5 class="blog-card__author__name">
-                        <a href="index-2.html#">Mike Hardson</a>
+                        <a href="index-2.html#" style="text-decoration: none;">Mike Hardson</a>
                       </h5><!-- /.author-name -->
                     </div><!-- /.blog-card__author__identity -->
                   </div><!-- /.blog-card__author -->
@@ -1110,7 +1135,7 @@
                 <div class="blog-card__content">
                   <ul class="list-unstyled blog-card__meta">
                     <li>
-                      <a href="index-2.html#">
+                      <a href="index-2.html#" style="text-decoration: none;">
                         <span class="blog-card__meta__icon">
                           <i class="icon-comments"></i>
                         </span>
@@ -1118,7 +1143,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="index-2.html#">
+                      <a href="index-2.html#" style="text-decoration: none;">
                         <span class="blog-card__meta__icon">
                           <i class="icon-date"></i>
                         </span>
@@ -1134,7 +1159,7 @@
                     <div class="blog-card__author__identity">
                       <p class="blog-card__author__text">By Admin</p><!-- /.author-text -->
                       <h5 class="blog-card__author__name">
-                        <a href="index-2.html#">david cooper</a>
+                        <a href="index-2.html#" style="text-decoration: none;">david cooper</a>
                       </h5><!-- /.author-name -->
                     </div><!-- /.blog-card__author__identity -->
                   </div><!-- /.blog-card__author -->
@@ -1153,7 +1178,7 @@
       <div class="cta-one__content wow fadeInUp" data-wow-duration="1500ms">
         <h2 class="cta-one__title">Get Your Quality Skills Certificate <br>
           Through Eduhive</h2><!-- /.cta-one__title -->
-        <a href="contact.html" class="eduhive-btn">
+        <a href="contact.html" class="eduhive-btn" style="text-decoration: none;">
           <span>get started now</span>
           <span class="eduhive-btn__icon">
             <span class="eduhive-btn__icon__inner"><i class="icon-right-arrow"></i></span>
@@ -1188,19 +1213,19 @@
             <div class="mc-form__response"></div><!-- /.mc-form__response -->
           </div><!-- /.main-footer__newsletter -->
           <div class="main-footer__social social-links">
-            <a href="https://facebook.com">
+            <a href="https://facebook.com" style="text-decoration: none;">
               <i class="fab fa-facebook-f" aria-hidden="true"></i>
               <span class="sr-only">Facebook</span>
             </a>
-            <a href="https://twitter.com">
+            <a href="https://twitter.com" style="text-decoration: none;">
               <i class="icon-twitter" aria-hidden="true"></i>
               <span class="sr-only">Twitter</span>
             </a>
-            <a href="https://linkedin.com">
+            <a href="https://linkedin.com" style="text-decoration: none;">
               <i class="fab fa-linkedin-in" aria-hidden="true"></i>
               <span class="sr-only">Linkedin</span>
             </a>
-            <a href="https://youtube.com">
+            <a href="https://youtube.com" style="text-decoration: none;">
               <i class="fab fa-youtube" aria-hidden="true"></i>
               <span class="sr-only">Youtube</span>
             </a>
@@ -1217,15 +1242,16 @@
             <ul class="footer-widget__info">
               <li>
                 <span class="footer-widget__info__icon"><i class="icon-location"></i></span>
-                <a href="https://www.google.com/maps">2683 Smith Street, Boston - 02110</a>
+                <a href="https://www.google.com/maps" style="text-decoration: none;">2683 Smith Street, Boston -
+                  02110</a>
               </li>
               <li>
                 <span class="footer-widget__info__icon"><i class="icon-email"></i></span>
-                <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                <a href="mailto:needhelp@company.com" style="text-decoration: none;">needhelp@company.com</a>
               </li>
               <li>
                 <span class="footer-widget__info__icon"><i class="icon-telephone"></i></span>
-                <a href="tel:+6120320024">+61 2032 0024</a>
+                <a href="tel:+6120320024" style="text-decoration: none;">+61 2032 0024</a>
               </li>
             </ul><!-- /.footer-widget__info -->
           </div><!-- /.footer-widget -->

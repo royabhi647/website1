@@ -314,8 +314,8 @@ body {
     /* makes it fill the container */
     background-position: center;
     /* centers the image */
-    padding: 100px 0 120px;
-    min-height: 100vh;
+    padding: 100px 0 0px;
+    /* min-height: 100vh; */
     display: flex;
     align-items: center;
 }
@@ -459,6 +459,7 @@ body {
     align-items: center;
     font-size: 18px;
     transition: all 0.3s ease;
+    margin-bottom: 6px;
 }
 
 .hover-icon-reverse .btn-icon:last-child {
@@ -682,9 +683,9 @@ body {
 }
 
 .announcement {
+    position: relative;
     width: 100%;
     min-height: 100vh;
-    position: relative;
     overflow: hidden;
 }
 
@@ -749,19 +750,23 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 40px 20px;
     z-index: 3;
 }
 
 .announcement-image {
-    margin-top: 40px;
     display: flex;
     justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
+
+
 
 .announcement-image iframe {
     width: 1080px;
-    height: 720px;
+    height: 70vh;
     max-width: 100%;
     border-radius: 20px;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
@@ -2063,5 +2068,140 @@ body {
 @media (min-width: 1024px) {
     .youtube-main-heading {
         font-size: 3rem;
+    }
+}
+
+.animated-image {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+/* Bottom Left - Image 2 */
+.image2 {
+    bottom: 40px;
+    left: 40px;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+
+/* Top Right - Image 1 */
+.image1 {
+    top: 40px;
+    right: 40px;
+    animation: rotate360 8s linear infinite, pulse 2s ease-in-out infinite;
+}
+
+/* Top Right - Image 3 (slightly offset from image1) */
+.image3 {
+    bottom: 0;
+    right: 200px;
+    animation: floatLeftRight 5s ease-in-out infinite, fadeInOut 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+@keyframes floatLeftRight {
+
+    0%,
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(-15px) rotate(5deg);
+    }
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Image placeholder styling */
+.animated-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.image-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .youtube-main-heading {
+        font-size: 2rem;
+    }
+
+    .youtube-subtitle {
+        font-size: 1rem;
+    }
+
+    .animated-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .image1 {
+        top: 10px;
+        right: 20px;
+    }
+
+    .image2 {
+        bottom: 100px;
+        left: 20px;
+    }
+
+    .image3 {
+        top: 60px;
+        right: 160px;
     }
 }
