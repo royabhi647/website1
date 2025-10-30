@@ -2205,3 +2205,7 @@ body {
         right: 160px;
     }
 }
+
+* {
+  text-decoration: none !important;
+}
