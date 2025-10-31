@@ -9106,6 +9106,7 @@ hr {
   overflow: hidden;
   box-shadow: var(--shadow-1);
   padding: 30px;
+  top: 80px !important;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -14935,6 +14936,7 @@ only screen and (max-width: 575px) {
   overflow: hidden;
   box-shadow: var(--shadow-1);
   padding: 7px;
+  top: 80px !important;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -46774,13 +46776,18 @@ only screen and (max-width: 575px) {
 
 /* instructor */
 .meet-container {
-  max-width: 900px;
+  /* max-width: 1100px; */
   margin: 0 auto;
   background: #5765FF;
   overflow: hidden;
   color: white;
   border-radius: 4px;
   margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
 }
 
 /* Header */
@@ -46832,8 +46839,8 @@ only screen and (max-width: 575px) {
 
 /* Text section */
 .meet-text-wrapper {
-  flex: 2;
-  min-width: 300px;
+  /* flex: 2; */
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
