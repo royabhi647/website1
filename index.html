@@ -32,7 +32,8 @@
 
 <body>
   <!-- header -->
-  <header class="main-header main-header--two sticky-header sticky-header--normal">
+  <header class="main-header main-header--two sticky-header sticky-header--normal"
+    style="position: sticky; background-color: white;">
     <div class="container">
       <div class="main-header__inner">
         <div class="main-header__left">
@@ -123,6 +124,162 @@
       </div><!-- /.main-header__inner -->
     </div><!-- /.container-fluid -->
   </header>
+
+  <!-- Sticky -->
+  <div class="fixedbar-sticky-contact fixedbar-hide">
+    <button class="btn-sticky-callback" onclick="handleStickyCallback()">
+      <i class="fa fa-phone"></i>
+      <span>Request a Callback</span>
+    </button>
+    <a href="https://wa.me/your-number" target="_blank" rel="noopener" class="btn-sticky-whatsapp">
+      <i class="fab fa-whatsapp"></i>
+      <span>Say Hi! on Whatsapp</span>
+    </a>
+  </div>
+
+  <style>
+    .fixedbar-sticky-contact {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      min-height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      background: rgba(255, 255, 255, 0.97);
+      z-index: 9999;
+      box-shadow: 0 -2px 22px 0 rgba(40, 48, 78, 0.08), 0 0.2px 0 0 #d2dee2;
+      border-top: 2px solid #ddeaea;
+      padding: 0;
+      backdrop-filter: blur(3px);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    .fixedbar-sticky-contact.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Remove this class - we don't need it anymore */
+    /* .fixedbar-hide {
+    display: none !important;
+  } */
+
+    /* Callback Button */
+    .btn-sticky-callback {
+      display: flex;
+      align-items: center;
+      font-size: 1.16rem;
+      line-height: 1.3;
+      border-radius: 8px;
+      border: 2px solid #0d6651;
+      background: #fff;
+      color: #096c50;
+      padding: 10px 28px 10px 22px;
+      font-weight: 600;
+      letter-spacing: 0;
+      box-shadow: 0 1.2px 7px 0 rgba(44, 90, 92, 0.06);
+      cursor: pointer;
+      outline: none;
+      gap: 12px;
+      transition: all .17s;
+    }
+
+    .btn-sticky-callback:hover,
+    .btn-sticky-callback:focus {
+      background: #ecfff6;
+      color: #044b38;
+      border-color: #089971;
+    }
+
+    /* WhatsApp Button */
+    .btn-sticky-whatsapp {
+      display: flex;
+      align-items: center;
+      font-size: 1.16rem;
+      border-radius: 8px;
+      padding: 10px 34px 10px 24px;
+      font-weight: 600;
+      background: #38c457;
+      color: #fff;
+      border: none;
+      text-decoration: none;
+      gap: 13px;
+      box-shadow: 0 1.2px 7px 0 rgba(64, 196, 87, 0.09);
+      transition: all .16s;
+    }
+
+    .btn-sticky-whatsapp:hover,
+    .btn-sticky-whatsapp:focus {
+      background: #249f3e;
+      color: #fff;
+    }
+
+    /* Icons */
+    .btn-sticky-callback i,
+    .btn-sticky-whatsapp i {
+      font-size: 1.25em;
+      margin-right: 7px;
+      display: inline-block;
+      vertical-align: -2px;
+    }
+
+    @media (max-width:680px) {
+      .fixedbar-sticky-contact {
+        flex-direction: column;
+        gap: 9px;
+        padding: 8px 0 9px 0;
+        min-height: auto;
+      }
+
+      .btn-sticky-callback,
+      .btn-sticky-whatsapp {
+        width: 98vw;
+        justify-content: center;
+        padding: 12px 0;
+        font-size: 1rem;
+        border-radius: 9px;
+        font-weight: 600;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const stickyBar = document.querySelector('.fixedbar-sticky-contact');
+      if (!stickyBar) return;
+
+      // Remove the fixedbar-hide class to make it work
+      stickyBar.classList.remove('fixedbar-hide');
+
+      // Get the banner height (adjust selector if needed)
+      const banner = document.querySelector('.rbt-breadcrumb-default');
+      const bannerHeight = banner ? banner.offsetHeight : 400; // fallback to 400px if banner not found
+
+      window.addEventListener('scroll', function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // If scrolled past banner - SHOW and keep visible
+        if (scrollTop > bannerHeight) {
+          stickyBar.classList.add('show');
+        }
+        // If inside banner area - HIDE
+        else {
+          stickyBar.classList.remove('show');
+        }
+      }, false);
+    });
+
+    function handleStickyCallback() {
+      // Add your callback handling logic here
+      alert('Callback requested!');
+    }
+  </script>
 
   <!-- banner -->
   <div class="rbt-breadcrumb-default rbt-breadcrumb-style-3 version-02">
