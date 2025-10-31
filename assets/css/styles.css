@@ -46200,7 +46200,7 @@ only screen and (max-width: 575px) {
 .advisory-card {
   flex: 1;
   background: white;
-  padding: 35px 35px;
+  padding: 50px 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
