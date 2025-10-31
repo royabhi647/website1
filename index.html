@@ -281,6 +281,200 @@
     }
   </script>
 
+    <!-- Help desk -->
+    <!-- Floating Help Desk Button -->
+    <div class="helpdesk-floating-btn" id="helpdeskBtn" onclick="toggleHelpdeskChat()">
+        <i class="fa fa-headset"></i>
+    </div>
+
+    <!-- Help Desk Chat Zone (initially hidden) -->
+    <div class="helpdesk-chat-zone" id="helpdeskChat">
+        <div class="helpdesk-chat-header">
+            <span>AI Help Desk</span>
+            <button class="helpdesk-close-btn" onclick="toggleHelpdeskChat()">&times;</button>
+        </div>
+        <div class="helpdesk-chat-body" id="helpdeskChatBody">
+            <!-- Chat messages here -->
+            <div class="helpdesk-msg helpdesk-msg-ai">Hi! How can I help you today?</div>
+        </div>
+        <div class="helpdesk-chat-footer">
+            <input type="text" id="helpdeskChatInput" class="helpdesk-chat-input" placeholder="Type your message..."
+                onkeydown="if(event.key==='Enter'){submitHelpdeskChat()}">
+            <button class="helpdesk-send-btn" onclick="submitHelpdeskChat()">Send</button>
+        </div>
+    </div>
+
+    <style>
+        .helpdesk-floating-btn {
+            position: fixed;
+            bottom: 34px;
+            right: 32px;
+            width: 56px;
+            height: 56px;
+            background: #2486ce;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 16px rgba(36, 134, 206, 0.14);
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 10001;
+            transition: background 0.14s;
+        }
+
+        .helpdesk-floating-btn:hover {
+            background: #1769aa;
+        }
+
+        .helpdesk-chat-zone {
+            position: fixed;
+            bottom: 100px;
+            right: 32px;
+            width: 340px;
+            max-width: 90vw;
+            background: #fff;
+            border-radius: 13px;
+            box-shadow: 0 4px 36px rgba(36, 134, 206, 0.24);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 10002;
+            animation: helpdeskSlideIn 0.28s;
+        }
+
+        @keyframes helpdeskSlideIn {
+            from {
+                transform: translateY(48px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .helpdesk-chat-zone.active {
+            display: flex;
+        }
+
+        .helpdesk-chat-header {
+            background: #2486ce;
+            color: #fff;
+            padding: 14px 20px;
+            font-size: 1.18rem;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .helpdesk-close-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .helpdesk-chat-body {
+            background: #f7fbfe;
+            min-height: 120px;
+            max-height: 290px;
+            overflow-y: auto;
+            padding: 15px 14px;
+            font-size: 1rem;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .helpdesk-msg {
+            padding: 7px 12px;
+            border-radius: 8px;
+            margin-bottom: 3px;
+            max-width: 78%;
+            word-break: break-word;
+            font-size: 0.97rem;
+        }
+
+        .helpdesk-msg-ai {
+            background: #e1efed;
+            color: #157b6f;
+            align-self: flex-start;
+        }
+
+        .helpdesk-msg-user {
+            background: #cde5ff;
+            color: #2486ce;
+            align-self: flex-end;
+        }
+
+        .helpdesk-chat-footer {
+            display: flex;
+            padding: 11px 15px;
+            gap: 8px;
+            background: #fff;
+        }
+
+        .helpdesk-chat-input {
+            flex: 1 1 auto;
+            padding: 8px 12px;
+            border: 1px solid #d2eaf7;
+            border-radius: 7px;
+            font-size: 1rem;
+        }
+
+        .helpdesk-send-btn {
+            background: #2486ce;
+            color: #fff;
+            padding: 6px 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.14s;
+        }
+
+        .helpdesk-send-btn:hover {
+            background: #1769aa;
+        }
+    </style>
+
+    <script>
+        function toggleHelpdeskChat() {
+            var chatZone = document.getElementById('helpdeskChat');
+            chatZone.classList.toggle('active');
+        }
+
+        function submitHelpdeskChat() {
+            var input = document.getElementById('helpdeskChatInput');
+            var chatBody = document.getElementById('helpdeskChatBody');
+            var msg = input.value.trim();
+            if (!msg) return;
+            // Add user message
+            var userMsgDiv = document.createElement('div');
+            userMsgDiv.className = 'helpdesk-msg helpdesk-msg-user';
+            userMsgDiv.textContent = msg;
+            chatBody.appendChild(userMsgDiv);
+            input.value = '';
+            // Placeholder AI response
+            setTimeout(function () {
+                var aiMsgDiv = document.createElement('div');
+                aiMsgDiv.className = 'helpdesk-msg helpdesk-msg-ai';
+                aiMsgDiv.textContent = "AI: This is a demo response. (Integrate with your backend AI API here)";
+                chatBody.appendChild(aiMsgDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 600);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+    </script>
+
   <!-- banner -->
   <div class="rbt-breadcrumb-default rbt-breadcrumb-style-3 version-02">
     <div class="breadcrumb-inner">
