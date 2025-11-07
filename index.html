@@ -2263,54 +2263,665 @@
     </div>
   </section>
 
-  <!-- contact us -->
-  <section class="custom-contactcompact">
-    <div class="contactcompact-bgimg">
-      <div class="contactcompact-overlay">
-        <form class="contactcompact-form" autocomplete="off">
-          <h2 class="contactcompact-title">Have Questions?<br>Contact us</h2>
-          <div class="contactcompact-row">
-            <input type="text" class="contactcompact-input" placeholder="Full Name*" required />
-            <input type="email" class="contactcompact-input" placeholder="Enter Email ID*" required />
-          </div>
-          <div class="contactcompact-row">
-            <select class="contactcompact-input contactcompact-select">
-              <option>India (+91)</option>
-              <option>USA (+1)</option>
-              <option>UK (+44)</option>
-            </select>
-            <input type="tel" class="contactcompact-input" placeholder="Contact Number*" required />
-            <select class="contactcompact-input contactcompact-select">
-              <option value="">Select Closest Location</option>
-              <option>Bangalore</option>
-              <option>Mumbai</option>
-              <option>Delhi</option>
-              <option>Chennai</option>
-            </select>
-          </div>
-          <div class="contactcompact-row">
-            <select class="contactcompact-input contactcompact-select">
-              <option value="">Select Qualification</option>
-              <option>Bachelor's</option>
-              <option>Master's</option>
-              <option>PhD</option>
-            </select>
-          </div>
-          <div class="contactcompact-accept">
-            <input type="checkbox" id="compact-terms" required />
-            <label for="compact-terms">I accept the <a href="#" class="contactcompact-link">Terms &
-                Conditions</a></label>
-          </div>
-          <button type="submit" class="contactcompact-btn"
-            style="display: flex; justify-content: center; align-items: center; width: 50%;">
-            Submit
-          </button>
+ <style>
+        /* ===== SECTION 1: Program Fee & Advisory ===== */
+        .program-fee-section {
+            background: #f5f5f5;
+            padding: 60px 0;
+        }
 
-          <!-- <button type="submit" class="contactcompact-btn" style="">Submit</button> -->
-        </form>
-      </div>
-    </div>
-  </section>
+        .section-space {
+            padding: 20px 0;
+        }
+
+        .cards-wrapper {
+            display: flex;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            /* max-width: 900px; */
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            flex: 1;
+            background: linear-gradient(135deg, #1a7a6a 0%, #2d9d8c 100%);
+            color: white;
+            padding: 50px 35px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pricing-card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+        }
+
+        .rupee {
+            font-size: 2.2rem;
+        }
+
+        .subtext {
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            /* padding: 12px 32px; */
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-white {
+            background: white;
+            color: #1a7a6a;
+        }
+
+        .btn-white:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .advisory-card {
+            flex: 1;
+            background: white;
+            padding: 35px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .advisory-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .btn-purple {
+            background: #6c5ce7;
+            color: white;
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-purple:hover {
+            background: #5f4fd1;
+        }
+
+        .arrow {
+            font-size: 1.2rem;
+        }
+
+        /* ===== SECTION 2: Contact Form ===== */
+        .contact-form-section {
+            background: linear-gradient(135deg, #e8f5f3 0%, #f0f9f7 100%);
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 25px,
+                    rgba(26, 122, 106, 0.04) 25px,
+                    rgba(26, 122, 106, 0.04) 50px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            align-items: stretch;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-image-side {
+            flex: 0 0 380px;
+            position: relative;
+        }
+
+        .contact-triangle-img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 20% 100%, 0 100%);
+            overflow: hidden;
+            background: white;
+        }
+
+        .contact-triangle-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .contact-form-side {
+            flex: 1;
+            padding: 35px 45px;
+            background: transparent;
+        }
+
+        .contact-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .form-row-custom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-input {
+            padding: 12px 16px;
+            border: 1px solid #d5e8e5;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            background: white;
+            color: #2c3e50;
+            transition: border 0.3s;
+        }
+
+        .form-input::placeholder {
+            color: #95a5a6;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #1a7a6a;
+        }
+
+        .form-input.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .phone-input-wrapper {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 10px;
+        }
+
+        .country-select {
+            flex: 0 0 130px;
+        }
+
+        .phone-input {
+            flex: 1;
+        }
+
+        .checkbox-wrapper {
+            margin: 18px 0 22px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #007bff;
+        }
+
+        .checkbox-wrapper label {
+            font-size: 0.9rem;
+            color: #2c3e50;
+            cursor: pointer;
+        }
+
+        .terms-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .terms-link:hover {
+            text-decoration: underline;
+        }
+
+        .btn-submit-form {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #1a7a6a 0%, #2d9d8c 100%);
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit-form:hover {
+            background: linear-gradient(135deg, #15675a 0%, #258073 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 122, 106, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .cards-wrapper {
+                flex-direction: column;
+            }
+
+            .contact-wrapper {
+                flex-direction: column;
+            }
+
+            .contact-image-side {
+                flex: 0 0 300px;
+                margin-bottom: 20px;
+            }
+
+            .contact-triangle-img {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);
+            }
+
+            .contact-form-side {
+                padding: 30px 25px;
+            }
+
+            .contact-heading {
+                font-size: 2.2rem;
+            }
+
+            .form-row-custom {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-image-side {
+                flex: 0 0 250px;
+            }
+
+            .contact-heading {
+                font-size: 1.9rem;
+            }
+
+            .form-input {
+                padding: 11px 14px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+
+    <script>
+        function handleEnquire() {
+            alert('Enquire Now clicked!');
+        }
+
+        function handleTalkToAdvisor() {
+            alert('Talk To Our Advisor clicked!');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Form submitted successfully!');
+            event.target.reset();
+        }
+    </script>
+
+    <section class="contect-static-section">
+        <div class="contect-static-form-container">
+            <form class="contect-static-form" autocomplete="off">
+                <h2 class="contect-static-title">Have Questions?<br>Contact us</h2>
+
+                <!-- Row 1: Full Name and Email -->
+                <div class="contect-static-row">
+                    <input type="text" placeholder="Full Name*" required class="contect-static-input" />
+                    <input type="email" placeholder="Enter Email ID*" required class="contect-static-input" />
+                </div>
+
+                <!-- Row 2: Country Code, Contact Number, Location -->
+                <div class="contect-static-row">
+                    <div class="contect-static-select contect-static-country-code">
+                        <input type="text" placeholder="Country Code*" required class="contect-static-input" />
+                    </div>
+
+                    <input type="tel" placeholder="Contact Number*" required
+                        class="contect-static-input contect-static-contact-number" />
+
+                    <div class="contect-static-select contect-static-location-select">
+                        <input type="text" placeholder="Enter Closest Location" required class="contect-static-input" />
+                    </div>
+                </div>
+
+                <!-- Row 3: Qualification -->
+                <div class="contect-static-row">
+                    <div class="contect-static-select contect-static-qualification-select">
+                        <input type="text" placeholder="Enter Qualification" required class="contect-static-input" />
+                    </div>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="contect-static-checkbox-container">
+                    <input type="checkbox" id="compact-terms" required class="contect-static-checkbox" />
+                    <label for="compact-terms" class="contect-static-checkbox-label">
+                        I accept the <a href="#" class="contect-static-terms-link">Terms & Conditions</a>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="contect-static-submit-btn">
+                    <span>Submit</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <style>
+        /* Reset and base */
+        .contect-static-reset * {
+            all: initial;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* Layout */
+        .contect-static-section {
+            min-height: 590px;
+            width: 100vw;
+            background: url('assets/images/about.png') center center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-end;
+            padding: 0;
+        }
+
+        .contect-static-form-container {
+            width: 52vw;
+            min-width: 470px;
+            min-height: 590px;
+            background: linear-gradient(95deg, #e8f5f3ef 62%, #e8f5f3e5 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            backdrop-filter: blur(8px);
+        }
+
+        .contect-static-form {
+            width: 92%;
+            max-width: 690px;
+            margin-left: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .contect-static-title {
+            font-size: 2.5rem;
+            color: #3a5456;
+            font-weight: 700;
+            margin: 0 0 30px 0;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            text-align: left;
+        }
+
+        /* Input Row Base */
+        .contect-static-row {
+            display: flex;
+            gap: 14px;
+            width: 100%;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Input & Select Base */
+        .contect-static-input,
+        .contect-static-select {
+            display: block;
+            /* padding: 13px 14px; */
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+            background: #ffffff;
+            color: #2d4547;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.25s ease;
+            font-weight: 400;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        .contect-static-input:focus,
+        .contect-static-select:focus {
+            border-color: #47bab7;
+            box-shadow: 0 0 0 3px rgba(71, 186, 183, 0.1);
+            z-index: 10;
+        }
+
+        .contect-static-input:hover,
+        .contect-static-select:hover {
+            border-color: #999;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .contect-static-input:not(:focus):hover,
+        .contect-static-select:not(:focus):hover {
+            background-color: #fafafa;
+        }
+
+        .contect-static-input:not(:focus),
+        .contect-static-select:not(:focus) {
+            background-color: #ffffff;
+        }
+
+        /* Country Code Select */
+        .contect-static-country-code {
+            flex: 0 0 145px;
+            min-width: 145px;
+            max-width: 145px;
+            cursor: pointer;
+        }
+
+        /* Contact Number */
+        .contect-static-contact-number {
+            flex: 0 0 180px;
+            min-width: 160px;
+        }
+
+        /* Location & Qualification Select */
+        .contect-static-location-select,
+        .contect-static-qualification-select {
+            flex: 1 1 0;
+            min-width: 180px;
+            cursor: pointer;
+        }
+
+        .contect-static-qualification-select {
+            width: 100%;
+        }
+
+        /* Checkbox */
+        .contect-static-checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px 0 22px 0;
+        }
+
+        .contect-static-checkbox {
+            width: 18px;
+            height: 18px;
+            accent-color: #3b82f6;
+            cursor: pointer;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .contect-static-checkbox-label {
+            color: #4b5563;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .contect-static-terms-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .contect-static-terms-link:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .contect-static-submit-btn {
+            width: 100%;
+            max-width: 260px;
+            background: linear-gradient(135deg, #0f5846 0%, #0d4d3d 100%);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(15, 88, 70, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        .contect-static-submit-btn:hover {
+            background: linear-gradient(135deg, #0d4d3d 0%, #0a3d31 100%);
+            box-shadow: 0 4px 20px rgba(15, 88, 70, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .contect-static-submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Dropdown Option Styles */
+        .contect-static-select option {
+            padding: 12px 16px !important;
+            font-size: 1rem !important;
+            font-weight: 500 !important;
+            color: #2d4547 !important;
+            background: white !important;
+            min-height: 40px !important;
+            line-height: 1.5 !important;
+        }
+
+        .contect-static-select option:hover {
+            background: #e8f5f3 !important;
+            color: #195b3e !important;
+        }
+
+        .contect-static-select option:checked {
+            background: #47bab7 !important;
+            color: white !important;
+            font-weight: 600 !important;
+        }
+
+        .contect-static-select option[value=""] {
+            color: #888 !important;
+            font-weight: 400 !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .contect-static-form-container {
+                width: 98vw !important;
+                min-width: 0 !important;
+            }
+
+            .contect-static-title {
+                font-size: 2rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contect-static-row:nth-child(3) {
+                flex-wrap: wrap !important;
+            }
+
+            .contect-static-country-code {
+                flex: 0 0 140px !important;
+            }
+
+            .contect-static-contact-number {
+                flex: 1 1 0 !important;
+                min-width: 0 !important;
+            }
+
+            .contect-static-location-select {
+                flex: 1 1 100% !important;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .contect-static-row {
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+
+            .contect-static-row>* {
+                flex: 1 1 auto !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+
+            .contect-static-submit-btn {
+                width: 100% !important;
+                max-width: none !important;
+            }
+
+            .contect-static-title {
+                font-size: 1.75rem !important;
+            }
+        }
+    </style>
 
   <!-- Popular overviews -->
   <section class="overview">
